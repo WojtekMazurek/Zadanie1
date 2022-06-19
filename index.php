@@ -1,23 +1,26 @@
 <?php
-
+$tlo='background="tlo.png"';
+echo "<body $tlo>";
 $time_zone = getTimeZoneFromIpAddress(); //zapisanie pobranych danych z funkcji                                                                               
 $ip = get_client_ip();
 
 echo 'Przygotował Wojciech Mazurek';
-echo '< br/>';
-echo 'Twoja strefa czasowa to: '.$time_zone; 
 echo '<br />';
-echo 'Twoje IP: '.$ip;
+echo 'Nie wiem dlaczego ciagle pokazuje rejon AFRYKA';
 echo '<br />';
-$dt = new DateTime("now", new DateTimeZone($time_zone)); //wyświetlanie godziny i daty 
-echo $dt->format("Y-m-d H:i:s");
+echo 'Twoja strefa czasowa : '.$time_zone; 
+echo '<br />';
+echo 'IP: '.$ip;
+echo '<br />';
+$getDateTime = new DateTime("now", new DateTimeZone($time_zone)); //wyświetlanie godziny i daty 
+echo $getDateTime->format("d-m-Y H:i:s");
 
 
 
 
 
 $logFileName = 'MYLOG.log'; // zapisywanie logów
-$logContent = "Marcin Poprawa".PHP_EOL;
+$logContent = "Wojciech Mazurek".PHP_EOL;
 $date = new DateTime();
 $date = $date->format("y:m:d h:i:s");
 if ($handle = fopen($logFileName, 'a'))
